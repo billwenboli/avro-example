@@ -14,11 +14,17 @@ public class DataMain {
         byte[] genericResult = AvroGenericExport.avroStreamExport();
         AvroGenericImport.avroStreamImport(genericResult);
 
+        byte[] genericEncode = AvroGenericExport.avroEncodeExport();
+        AvroGenericImport.avroDecodeImport(genericEncode);
+
         // Specific Set
         File specificFile = AvroSpecificExport.avroFileExport();
         AvroSpecificImport.avroFileImport(specificFile);
 
         byte[] specificResult = AvroSpecificExport.avroStreamExport();
         AvroSpecificImport.avroStreamImport(specificResult);
+
+        byte[] specificEncode = AvroSpecificExport.avroEncodeExport();
+        AvroSpecificImport.avroDecodeImport(specificEncode);
     }
 }
